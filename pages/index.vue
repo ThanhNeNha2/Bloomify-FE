@@ -1,8 +1,8 @@
 <script>
 import {
   defineComponent,
-  ref,
-} from 'vue'
+  ref
+} from 'vue';
 import HomePageContext from './HomePageContext';
 
  
@@ -10,18 +10,18 @@ export default defineComponent({
   name: 'HomeView',
 
   setup () {
-    const displayNameRef = ref('Vo Chi Thanh')
+    const displayNameRef = ref('Vo Chi Thanh');
 
     const context = HomePageContext.create({
-      displayNameRef,
+      displayNameRef
     })
-      .setupComponent()
+      .setupComponent();
 
     return {
-      context,
-    }
-  },
-})
+      context
+    };
+  }
+});
 </script>
 
 <template>
@@ -38,6 +38,8 @@ export default defineComponent({
 
 <style scoped>
 .unit-home {
+  background-color: var(--background-color);
+  
   padding-block: 1rem;
   padding-inline: 1rem;
 }
@@ -47,6 +49,6 @@ export default defineComponent({
 }
 
 .unit-home > .name {
-  margin-block-start: 0;
+  color: var(--color-brown);
 }
 </style>
