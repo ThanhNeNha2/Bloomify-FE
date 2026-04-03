@@ -1,0 +1,65 @@
+:root {
+    /* Colors */
+    --color-primary: #3b82f6;
+    --color-primary-dark: #2563eb;
+    --color-secondary: #64748b;
+    --color-background: #f8fafc;
+    --color-background-card: #ffffff;
+    --color-text-primary: #1e293b;
+    --color-text-secondary: #64748b;
+    --color-text-on-primary: #ffffff;
+    --color-border: #e2e8f0;
+
+    /* Spacing */
+    --size-space-tiny: 0.25rem;
+    --size-space-small: 0.5rem;
+    --size-space-medium: 1rem;
+    --size-space-large: 1.5rem;
+    --size-space-x-large: 2rem;
+    --size-space-xx-large: 3rem;
+
+    /* Border radius */
+    --size-border-radius: 0.5rem;
+    --size-border-radius-small: 0.25rem;
+    --size-border-radius-large: 1rem;
+
+    /* Font sizes */
+    --size-font-size-body: 1rem;
+    --size-font-size-body-small: 0.875rem;
+    --size-font-size-label-small: 0.75rem;
+
+    /* Font weights */
+    --size-font-weight-medium: 500;
+    --size-font-weight-bold: 700;
+
+    /* Other sizes */
+    --size-thinnest: 0.0625rem;
+    /* 1px in rem */
+    --transition-timer: 0.2s;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+input {
+    font-family: inherit;
+}
