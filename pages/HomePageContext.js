@@ -7,13 +7,13 @@ export default class HomePageContext {
    *
    * @type {import('vue').Ref<string>}
    */
-  displayNameRef
+  displayNameRef;
 
   /**
    * @param {HomePageContextParams} params - Parameters.
    */
   constructor (params) {
-    this.displayNameRef = params.displayNameRef
+    this.displayNameRef = params.displayNameRef;
   }
 
   /**
@@ -21,7 +21,7 @@ export default class HomePageContext {
    * @returns {HomePageContext} Context instance.
    */
   static create (params) {
-    return new this(params)
+    return new this(params);
   }
 
   /**
@@ -30,7 +30,7 @@ export default class HomePageContext {
    * @returns {this} Chainable instance.
    */
   setupComponent () {
-    return this
+    return this;
   }
 
   /**
@@ -39,9 +39,9 @@ export default class HomePageContext {
    * @returns {string} Greeting text.
    */
   formatGreetingLine () {
-    const name = this.displayNameRef.value
+    const name = this.displayNameRef.value;
 
-    return `Hello, ${name}`
+    return `Hello, ${name}`;
   }
 }
 
