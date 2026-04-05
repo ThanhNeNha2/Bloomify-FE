@@ -8,6 +8,12 @@ const sharedRules = {
   quotes: ['error', 'single'],
   semi: ['error', 'always'],
   'comma-dangle': ['error', 'never'],
+  'no-multiple-empty-lines': [
+    'error',
+    {
+      max: 1
+    }
+  ],
 
   // ===== CLEAN CODE =====
   'no-unused-vars': 'warn',
