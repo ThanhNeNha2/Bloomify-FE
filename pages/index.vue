@@ -4,7 +4,6 @@ import {
   ref
 } from 'vue';
 import HomePageContext from './HomePageContext';
-
  
 export default defineComponent({
   name: 'HomeView',
