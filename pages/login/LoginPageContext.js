@@ -1,7 +1,7 @@
 /**
  * Page context without a separate base class: factory + setup chain live here.
  */
-export default class HomePageContext {
+export default class LoginPageContext {
   /**
      * Bound from Vue ref in setup().
      *
@@ -10,15 +10,15 @@ export default class HomePageContext {
   displayNameRef;
 
   /**
-     * @param {HomePageContextParams} params - Parameters.
+     * @param {LoginPageContextParams} params - Parameters.
      */
   constructor(params) {
     this.displayNameRef = params.displayNameRef;
   }
 
   /**
-     * @param {HomePageContextFactoryParams} params - Parameters.
-     * @returns {HomePageContext} Context instance.
+     * @param {LoginPageContextFactoryParams} params - Parameters.
+     * @returns {LoginPageContext} Context instance.
      */
   static create(params) {
     return new this(params);
@@ -41,16 +41,16 @@ export default class HomePageContext {
   formatGreetingLine() {
     const name = this.displayNameRef.value;
 
-    return `Hello, ${name}`;
+    return `Hello, ${name}kkk `;
   }
 }
 
 /**
  * @typedef {{
  *   displayNameRef: import('vue').Ref<string>
- * }} HomePageContextParams
+ * }} LoginPageContextParams
  */
 
 /**
- * @typedef {HomePageContextParams} HomePageContextFactoryParams
+ * @typedef {LoginPageContextParams} LoginPageContextFactoryParams
  */

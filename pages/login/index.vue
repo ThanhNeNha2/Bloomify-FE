@@ -3,16 +3,15 @@ import {
   defineComponent,
   ref
 } from 'vue';
-import HomePageContext from './HomePageContext';
+import LoginPageContext from './LoginPageContext';
 
- 
 export default defineComponent({
   name: 'HomeView',
 
   setup () {
     const displayNameRef = ref('Vo Chi Thanh');
 
-    const context = HomePageContext.create({
+    const context = LoginPageContext.create({
       displayNameRef
     })
       .setupComponent();
@@ -25,25 +24,16 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="unit-home">
-    <p class="greeting">
-      {{ context.formatGreetingLine() }}
-    </p>
-
- 
+  <div class="unit-login">
+    <div class="header-login">
+      <span>Atelier</span>
+    </div>
   </div>
 </template>
 
 <style scoped>
-.unit-home {
-  background-color: var(--background-color);
-}
-
-.unit-home > .greeting {
-  margin-block-end: 0.5rem;
-}
-
-.unit-home > .name {
-  color: var(--color-brown);
+.unit-login {
+  background-color:  red;
+  width: 100vw;
 }
 </style>
