@@ -140,7 +140,6 @@ export default defineComponent({
 </template>
 
 <style scoped>
-/* Root variables based on your Tailwind config */
 .unit-login {
   --primary: #000000;
   --secondary: #735a3a;
@@ -151,47 +150,45 @@ export default defineComponent({
   --outline-variant: rgba(196, 199, 199, 0.3);
 
   background-color: var(--background);
-  height: 100vh; /* Ép cứng chiều cao bằng 1 màn hình */
-  overflow-y: auto; /* Chỉ cho phép cuộn nếu màn hình cực kỳ nhỏ (như điện thoại dọc) */
+  height: 100vh;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   font-family: 'Inter', sans-serif;
 }
 
-/* Header */
-.header {
-  padding: 1.5rem 2rem; /* Giảm padding dọc */
+.unit-login > .header {
+  padding: 1.5rem 2rem;
   display: flex;
   justify-content: center;
-  flex-shrink: 0; /* Ngăn header bị bóp méo */
+  flex-shrink: 0;
+
+  @media (min-width: 768px) {
+    justify-content: flex-start;
+  }
 }
 
-@media (min-width: 768px) {
-  .header { justify-content: flex-start; }
-}
-
-.brand {
+.unit-login > .header > .brand {
   font-family: 'Noto Serif', serif;
-  font-size: 1.5rem; /* Giảm size chữ */
+  font-size: 1.5rem;
   font-weight: 900;
   letter-spacing: -0.05em;
   text-decoration: none;
   color: var(--primary);
 }
 
-/* Main Content */
-.main-content {
+.unit-login > .main-content {
   flex-grow: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 1.5rem 1rem 1.5rem; /* Giảm padding bottom */
-  min-height: 0; /* Giữ cho flexbox không bị tràn nội dung */
+  padding: 0 1.5rem 1rem 1.5rem;
+  min-height: 0;
 }
 
-.login-card {
+.unit-login > .main-content > .login-card {
   width: 100%;
-  max-width: 1000px; /* Thu gọn max-width một chút để cân đối với chiều cao mới */
+  max-width: 1000px;
   max-height: 100%;
   display: grid;
   grid-template-columns: 1fr;
@@ -200,25 +197,23 @@ export default defineComponent({
   border-radius: 0.5rem;
   overflow: hidden;
   border: 1px solid var(--outline-variant);
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-@media (min-width: 768px) {
-  .login-card { grid-template-columns: 1fr 1fr; }
-}
-
-/* Left Side Image */
-.editorial-side {
+.unit-login > .main-content > .login-card > .editorial-side {
   display: none;
   position: relative;
   background-color: var(--primary);
-  /* Đã xóa min-height: 600px để ảnh tự động khớp chiều cao card */
+
+  @media (min-width: 768px) {
+    display: block;
+  }
 }
 
-@media (min-width: 768px) {
-  .editorial-side { display: block; }
-}
-
-.editorial-img {
+.unit-login > .main-content > .login-card > .editorial-side > .editorial-img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -228,20 +223,20 @@ export default defineComponent({
   mix-blend-mode: luminosity;
 }
 
-.overlay-gradient {
+.unit-login > .main-content > .login-card > .editorial-side > .overlay-gradient {
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, var(--primary), transparent, transparent);
 }
 
-.editorial-text {
+.unit-login > .main-content > .login-card > .editorial-side > .editorial-text {
   position: absolute;
-  bottom: 2rem; /* Giảm bottom */
+  bottom: 2rem;
   left: 2.5rem;
   right: 2.5rem;
 }
 
-.sub-title {
+.unit-login > .main-content > .login-card > .editorial-side > .editorial-text > .sub-title {
   color: #e2c19b;
   font-size: 10px;
   letter-spacing: 0.3em;
@@ -249,79 +244,77 @@ export default defineComponent({
   margin-bottom: 0.75rem;
 }
 
-.editorial-heading {
+.unit-login > .main-content > .login-card > .editorial-side > .editorial-text > .editorial-heading {
   font-family: 'Noto Serif', serif;
   font-style: italic;
-  font-size: 1.75rem; /* Giảm size chữ */
+  font-size: 1.75rem;
   color: white;
   line-height: 1.2;
   max-width: 320px;
 }
 
-.accent-line {
+.unit-login > .main-content > .login-card > .editorial-side > .editorial-text > .accent-line {
   margin-top: 1.5rem;
   height: 1px;
   width: 6rem;
   background-color: var(--secondary);
 }
 
-/* Right Side Form */
-.form-side {
+.unit-login > .main-content > .login-card > .form-side {
   padding: 1.5rem;
   background-color: var(--surface-lowest);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow-y: auto; /* Cho phép cuộn nhẹ trong form nếu màn hình quá bé */
+  overflow-y: auto;
+
+  @media (min-width: 768px) {
+    padding: 2.5rem;
+  }
 }
 
-@media (min-width: 768px) {
-  .form-side { padding: 2.5rem; }
-}
-
-.form-container {
+.unit-login > .main-content > .login-card > .form-side > .form-container {
   max-width: 28rem;
   margin: 0 auto;
   width: 100%;
 }
 
-.form-header {
-  margin-bottom: 1.5rem; /* Giảm margin */
+.unit-login > .main-content > .login-card > .form-side > .form-container > .form-header {
+  margin-bottom: 1.5rem;
   text-align: center;
+
+  @media (min-width: 768px) {
+    text-align: left;
+  }
 }
 
-@media (min-width: 768px) {
-  .form-header { text-align: left; }
-}
-
-.title {
+.unit-login > .main-content > .login-card > .form-side > .form-container > .form-header > .title {
   font-family: 'Noto Serif', serif;
-  font-size: 1.5rem; /* Giảm size */
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--primary);
   margin-bottom: 0.25rem;
 }
 
-.subtitle {
+.unit-login > .main-content > .login-card > .form-side > .form-container > .form-header > .subtitle {
   color: var(--on-surface-variant);
   font-size: 0.875rem;
   font-weight: 300;
 }
 
-/* Inputs */
-.login-form {
+.unit-login > .main-content > .login-card > .form-side > .form-container > .login-form {
   display: flex;
   flex-direction: column;
-  gap: 1rem; /* Giảm gap giữa các trường từ 1.5rem -> 1rem */
+  gap: 1rem;
 }
 
-.input-group {
+.unit-login > .main-content > .login-card > .form-side > .form-container > .login-form > .input-group {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.input-label {
+.unit-login > .main-content > .login-card > .form-side > .form-container > .login-form > .input-group > .input-label {
   font-size: 10px;
   font-weight: 500;
   text-transform: uppercase;
@@ -330,9 +323,9 @@ export default defineComponent({
   margin-left: 0.25rem;
 }
 
-.input-field {
+.unit-login > .main-content > .login-card > .form-side > .form-container > .login-form > .input-group > .input-field {
   width: 100%;
-  padding: 0.75rem 1rem; /* Giảm vertical padding */
+  padding: 0.75rem 1rem;
   background-color: var(--surface-low);
   border: 1px solid var(--outline-variant);
   border-radius: 0.125rem;
@@ -340,18 +333,18 @@ export default defineComponent({
   transition: all 0.3s;
 }
 
-.input-field:focus {
+.unit-login > .main-content > .login-card > .form-side > .form-container > .login-form > .input-group > .input-field:focus {
   outline: 1px solid var(--secondary);
   border-color: var(--secondary);
 }
 
-.label-row {
+.unit-login > .main-content > .login-card > .form-side > .form-container > .login-form > .input-group > .label-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.forgot-link {
+.unit-login > .main-content > .login-card > .form-side > .form-container > .login-form > .input-group > .label-row > .forgot-link {
   font-size: 10px;
   color: var(--secondary);
   font-weight: 600;
@@ -359,11 +352,21 @@ export default defineComponent({
   text-decoration: none;
 }
 
-.relative-container {
+.unit-login > .main-content > .login-card > .form-side > .form-container > .login-form > .input-group > .relative-container {
   position: relative;
 }
 
-.toggle-password {
+.unit-login > .main-content > .login-card > .form-side > .form-container > .login-form > .input-group > .relative-container > .input-field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--surface-low);
+  border: 1px solid var(--outline-variant);
+  border-radius: 0.125rem;
+  font-size: 0.875rem;
+  transition: all 0.3s;
+}
+
+.unit-login > .main-content > .login-card > .form-side > .form-container > .login-form > .input-group > .relative-container > .toggle-password {
   position: absolute;
   right: 1rem;
   top: 50%;
@@ -375,27 +378,29 @@ export default defineComponent({
   font-size: 1.25rem;
 }
 
-/* Checkbox */
-.checkbox-group {
+.unit-login > .main-content > .login-card > .form-side > .form-container > .login-form > .checkbox-group {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   margin-left: 0.25rem;
 }
 
-.checkbox-label {
+.unit-login > .main-content > .login-card > .form-side > .form-container > .login-form > .checkbox-group > .checkbox-input {
+  /* Default styles for input if needed */
+}
+
+.unit-login > .main-content > .login-card > .form-side > .form-container > .login-form > .checkbox-group > .checkbox-label {
   font-size: 0.75rem;
   color: var(--on-surface-variant);
   font-weight: 300;
   cursor: pointer;
 }
 
-/* Button */
-.btn-primary {
+.unit-login > .main-content > .login-card > .form-side > .form-container > .login-form > .btn-primary {
   width: 100%;
   background-color: var(--primary);
   color: white;
-  padding: 0.875rem; /* Giảm padding */
+  padding: 0.875rem;
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -407,22 +412,21 @@ export default defineComponent({
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
-.btn-primary:hover {
+.unit-login > .main-content > .login-card > .form-side > .form-container > .login-form > .btn-primary:hover {
   background-color: var(--secondary);
 }
 
-.btn-primary:active {
+.unit-login > .main-content > .login-card > .form-side > .form-container > .login-form > .btn-primary:active {
   transform: scale(0.98);
 }
 
-/* Divider */
-.divider {
+.unit-login > .main-content > .login-card > .form-side > .form-container > .login-form > .divider {
   position: relative;
-  padding: 0.5rem 0; /* Giảm padding */
+  padding: 0.5rem 0;
   text-align: center;
 }
 
-.divider::before {
+.unit-login > .main-content > .login-card > .form-side > .form-container > .login-form > .divider::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -432,7 +436,7 @@ export default defineComponent({
   background-color: var(--outline-variant);
 }
 
-.divider-text {
+.unit-login > .main-content > .login-card > .form-side > .form-container > .login-form > .divider > .divider-text {
   position: relative;
   background-color: var(--surface-lowest);
   padding: 0 1rem;
@@ -442,19 +446,18 @@ export default defineComponent({
   letter-spacing: 0.1em;
 }
 
-/* Social Buttons */
-.social-grid {
+.unit-login > .main-content > .login-card > .form-side > .form-container > .login-form > .social-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
 
-.social-btn {
+.unit-login > .main-content > .login-card > .form-side > .form-container > .login-form > .social-grid > .social-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.6rem 1rem; /* Giảm padding */
+  padding: 0.6rem 1rem;
   border: 1px solid var(--outline-variant);
   background: none;
   border-radius: 0.125rem;
@@ -462,34 +465,33 @@ export default defineComponent({
   transition: background 0.3s;
 }
 
-.social-btn:hover {
+.unit-login > .main-content > .login-card > .form-side > .form-container > .login-form > .social-grid > .social-btn:hover {
   background-color: var(--surface-low);
 }
 
-.social-btn span {
+.unit-login > .main-content > .login-card > .form-side > .form-container > .login-form > .social-grid > .social-btn > span {
   font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 
-.social-icon {
+.unit-login > .main-content > .login-card > .form-side > .form-container > .login-form > .social-grid > .social-btn > .social-icon {
   font-size: 1rem;
 }
 
-/* Form Footer */
-.form-footer {
-  margin-top: 1.5rem; /* Giảm margin */
+.unit-login > .main-content > .login-card > .form-side > .form-container > .form-footer {
+  margin-top: 1.5rem;
   text-align: center;
 }
 
-.form-footer p {
+.unit-login > .main-content > .login-card > .form-side > .form-container > .form-footer > p {
   font-size: 0.75rem;
   font-weight: 300;
   color: var(--on-surface-variant);
 }
 
-.signup-link {
+.unit-login > .main-content > .login-card > .form-side > .form-container > .form-footer > p > .signup-link {
   color: var(--primary);
   font-weight: 700;
   text-decoration: none;
@@ -498,44 +500,52 @@ export default defineComponent({
   transition: color 0.3s;
 }
 
-.signup-link:hover {
+.unit-login > .main-content > .login-card > .form-side > .form-container > .form-footer > p > .signup-link:hover {
   color: var(--secondary);
 }
 
-/* Bottom Footer */
-.bottom-footer {
+.unit-login > .bottom-footer {
   width: 100%;
   background-color: #f4f4f2;
-  padding: 1.5rem 2rem; /* Giảm padding từ 3rem -> 1.5rem */
+  padding: 1.5rem 2rem;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem; /* Giảm gap */
-  flex-shrink: 0; /* Ngăn footer bị ép khi màn hình nhỏ */
-}
+  gap: 1rem;
+  flex-shrink: 0;
+  transition: all 0.3s ease-in-out;
 
-@media (min-width: 768px) {
-  .bottom-footer {
+  @media (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
   }
+
+  @media (max-height: 750px) {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+    overflow: hidden;
+  }
 }
 
-.footer-brand {
+.unit-login > .bottom-footer > .footer-brand {
   font-family: 'Noto Serif', serif;
   font-style: italic;
   font-size: 1.125rem;
 }
 
-.footer-links {
+.unit-login > .bottom-footer > .footer-links {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
 }
 
-.footer-links a {
+.unit-login > .bottom-footer > .footer-links > a {
   font-size: 10px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -544,33 +554,14 @@ export default defineComponent({
   text-underline-offset: 4px;
 }
 
-.footer-links a:hover {
+.unit-login > .bottom-footer > .footer-links > a:hover {
   color: var(--secondary);
 }
 
-.copyright {
+.unit-login > .bottom-footer > .copyright {
   font-size: 10px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #9ca3af;
-}
-
-/* Ẩn footer khi chiều cao màn hình dưới 750px */
-@media (max-height: 750px) {
-  .bottom-footer {
-    opacity: 0;
-    visibility: hidden;
-    height: 0;
-    padding: 0;
-    margin: 0;
-    border: none;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
-  }
-}
-
-.bottom-footer {
-  /* Thêm transition vào class gốc của footer để tạo hiệu ứng mượt mà khi co giãn màn hình */
-  transition: all 0.3s ease-in-out;
 }
 </style>
