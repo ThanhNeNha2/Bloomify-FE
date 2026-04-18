@@ -3,6 +3,8 @@
 
     /* COLORS */
 
+    /* TEXT COLORS */
+
     --color-brown: #A68966;
     --color-primary: #3b82f6;
     --color-primary-dark: #2563eb;
@@ -16,6 +18,8 @@
 
     /* BACKGROUND COLORS */
     --background-color-login: #F9F9F7;
+
+
 
     --size-space-tiny: 0.25rem;
     --size-space-small: 0.5rem;
