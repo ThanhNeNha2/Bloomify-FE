@@ -1,6 +1,6 @@
 <template>
-  <div>
-
+  <div class="unit-register">
+    <h1>Register</h1>
   </div>
 </template>
 
