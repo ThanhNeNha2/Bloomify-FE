@@ -151,7 +151,8 @@ export default defineComponent({
   --outline-variant: rgba(196, 199, 199, 0.3);
 
   background-color: var(--background);
-  min-height: 100vh;
+  height: 100vh; /* Ép cứng chiều cao bằng 1 màn hình */
+  overflow-y: auto; /* Chỉ cho phép cuộn nếu màn hình cực kỳ nhỏ (như điện thoại dọc) */
   display: flex;
   flex-direction: column;
   font-family: 'Inter', sans-serif;
@@ -159,9 +160,10 @@ export default defineComponent({
 
 /* Header */
 .header {
-  padding: 2.5rem 2rem;
+  padding: 1.5rem 2rem; /* Giảm padding dọc */
   display: flex;
   justify-content: center;
+  flex-shrink: 0; /* Ngăn header bị bóp méo */
 }
 
 @media (min-width: 768px) {
@@ -170,7 +172,7 @@ export default defineComponent({
 
 .brand {
   font-family: 'Noto Serif', serif;
-  font-size: 1.875rem;
+  font-size: 1.5rem; /* Giảm size chữ */
   font-weight: 900;
   letter-spacing: -0.05em;
   text-decoration: none;
@@ -183,12 +185,14 @@ export default defineComponent({
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 1.5rem 5rem 1.5rem;
+  padding: 0 1.5rem 1rem 1.5rem; /* Giảm padding bottom */
+  min-height: 0; /* Giữ cho flexbox không bị tràn nội dung */
 }
 
 .login-card {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1000px; /* Thu gọn max-width một chút để cân đối với chiều cao mới */
+  max-height: 100%;
   display: grid;
   grid-template-columns: 1fr;
   background-color: var(--surface-low);
@@ -206,8 +210,8 @@ export default defineComponent({
 .editorial-side {
   display: none;
   position: relative;
-  min-height: 600px;
   background-color: var(--primary);
+  /* Đã xóa min-height: 600px để ảnh tự động khớp chiều cao card */
 }
 
 @media (min-width: 768px) {
@@ -219,7 +223,7 @@ export default defineComponent({
   inset: 0;
   width: 100%;
   height: 100%;
-  object-cover: cover;
+  object-fit: cover;
   opacity: 0.8;
   mix-blend-mode: luminosity;
 }
@@ -232,9 +236,9 @@ export default defineComponent({
 
 .editorial-text {
   position: absolute;
-  bottom: 3rem;
-  left: 3rem;
-  right: 3rem;
+  bottom: 2rem; /* Giảm bottom */
+  left: 2.5rem;
+  right: 2.5rem;
 }
 
 .sub-title {
@@ -242,20 +246,20 @@ export default defineComponent({
   font-size: 10px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .editorial-heading {
   font-family: 'Noto Serif', serif;
   font-style: italic;
-  font-size: 2.25rem;
+  font-size: 1.75rem; /* Giảm size chữ */
   color: white;
   line-height: 1.2;
   max-width: 320px;
 }
 
 .accent-line {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   height: 1px;
   width: 6rem;
   background-color: var(--secondary);
@@ -263,15 +267,16 @@ export default defineComponent({
 
 /* Right Side Form */
 .form-side {
-  padding: 2rem;
+  padding: 1.5rem;
   background-color: var(--surface-lowest);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow-y: auto; /* Cho phép cuộn nhẹ trong form nếu màn hình quá bé */
 }
 
 @media (min-width: 768px) {
-  .form-side { padding: 4rem; }
+  .form-side { padding: 2.5rem; }
 }
 
 .form-container {
@@ -281,7 +286,7 @@ export default defineComponent({
 }
 
 .form-header {
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem; /* Giảm margin */
   text-align: center;
 }
 
@@ -291,10 +296,10 @@ export default defineComponent({
 
 .title {
   font-family: 'Noto Serif', serif;
-  font-size: 1.875rem;
+  font-size: 1.5rem; /* Giảm size */
   font-weight: 700;
   color: var(--primary);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .subtitle {
@@ -307,7 +312,7 @@ export default defineComponent({
 .login-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem; /* Giảm gap giữa các trường từ 1.5rem -> 1rem */
 }
 
 .input-group {
@@ -327,7 +332,7 @@ export default defineComponent({
 
 .input-field {
   width: 100%;
-  padding: 1rem;
+  padding: 0.75rem 1rem; /* Giảm vertical padding */
   background-color: var(--surface-low);
   border: 1px solid var(--outline-variant);
   border-radius: 0.125rem;
@@ -390,7 +395,7 @@ export default defineComponent({
   width: 100%;
   background-color: var(--primary);
   color: white;
-  padding: 1rem;
+  padding: 0.875rem; /* Giảm padding */
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -413,7 +418,7 @@ export default defineComponent({
 /* Divider */
 .divider {
   position: relative;
-  padding: 1rem 0;
+  padding: 0.5rem 0; /* Giảm padding */
   text-align: center;
 }
 
@@ -449,7 +454,7 @@ export default defineComponent({
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.75rem 1rem;
+  padding: 0.6rem 1rem; /* Giảm padding */
   border: 1px solid var(--outline-variant);
   background: none;
   border-radius: 0.125rem;
@@ -474,7 +479,7 @@ export default defineComponent({
 
 /* Form Footer */
 .form-footer {
-  margin-top: 3rem;
+  margin-top: 1.5rem; /* Giảm margin */
   text-align: center;
 }
 
@@ -501,12 +506,13 @@ export default defineComponent({
 .bottom-footer {
   width: 100%;
   background-color: #f4f4f2;
-  padding: 3rem 2rem;
+  padding: 1.5rem 2rem; /* Giảm padding từ 3rem -> 1.5rem */
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem; /* Giảm gap */
+  flex-shrink: 0; /* Ngăn footer bị ép khi màn hình nhỏ */
 }
 
 @media (min-width: 768px) {
@@ -547,5 +553,24 @@ export default defineComponent({
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #9ca3af;
+}
+
+/* Ẩn footer khi chiều cao màn hình dưới 750px */
+@media (max-height: 750px) {
+  .bottom-footer {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.bottom-footer {
+  /* Thêm transition vào class gốc của footer để tạo hiệu ứng mượt mà khi co giãn màn hình */
+  transition: all 0.3s ease-in-out;
 }
 </style>
