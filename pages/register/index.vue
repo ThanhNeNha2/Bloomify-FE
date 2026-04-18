@@ -1,6 +1,6 @@
 <template>
   <div>
-
+    chí thanh
   </div>
 </template>
 
