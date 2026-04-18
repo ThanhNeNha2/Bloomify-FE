@@ -12,6 +12,9 @@
     --color-text-on-primary: #ffffff;
     --color-border: #e2e8f0;
 
+    /* BACKGROUND COLORS */
+    --background-color-login: #F9F9F7;
+
     --size-space-tiny: 0.25rem;
     --size-space-small: 0.5rem;
     --size-space-medium: 1rem;
