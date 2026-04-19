@@ -137,7 +137,6 @@ export default defineComponent({
 </template>
 
 <style scoped>
-/* Định nghĩa CSS Variables */
 .unit-register {
   --bg-color: #f9f9f7;
   --text-color: #1a1c1b;
@@ -157,23 +156,26 @@ export default defineComponent({
   color: var(--text-color);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
-  min-height: 100vh;
+
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 
-/* --- MAIN LAYOUT --- */
 .unit-register > .main-layout {
   display: flex;
   flex-direction: column;
   flex: 1;
 
+  overflow-y: auto;
+
   @media (min-width: 768px) {
     flex-direction: row;
+    overflow-y: hidden;
   }
 }
 
-/* --- EDITORIAL PANEL (LEFT) --- */
 .unit-register > .main-layout > .editorial-panel {
   display: none;
 
@@ -185,7 +187,7 @@ export default defineComponent({
     overflow: hidden;
     align-items: center;
     justify-content: center;
-    padding: 5rem;
+    padding: 3rem;
   }
 }
 
@@ -204,20 +206,20 @@ export default defineComponent({
 .unit-register > .main-layout > .editorial-panel > .content-wrapper {
   position: relative;
   z-index: 10;
-  max-width: 32rem;
+  max-width: 30rem;
 }
 
 .unit-register > .main-layout > .editorial-panel > .content-wrapper > .brand-title {
   color: var(--primary-color);
   font-family: var(--font-headline);
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 900;
   letter-spacing: -0.05em;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   line-height: 1.1;
 
   @media (min-width: 768px) {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
   }
 }
 
@@ -226,27 +228,27 @@ export default defineComponent({
   font-style: italic;
   font-weight: 400;
   display: block;
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
 }
 
 .unit-register > .main-layout > .editorial-panel > .content-wrapper > .brand-desc {
   color: var(--on-surface-variant);
-  font-size: 1.125rem;
-  line-height: 1.625;
-  margin-bottom: 3rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
   letter-spacing: 0.025em;
 }
 
 .unit-register > .main-layout > .editorial-panel > .content-wrapper > .features {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .unit-register > .main-layout > .editorial-panel > .content-wrapper > .features > .feature-item {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .unit-register > .main-layout > .editorial-panel > .content-wrapper > .features > .feature-item > .icon {
@@ -262,40 +264,39 @@ export default defineComponent({
 
 .unit-register > .main-layout > .editorial-panel > .brand-anchor {
   position: absolute;
-  bottom: 3rem;
-  left: 5rem;
+  bottom: 2rem;
+  left: 3rem;
 }
 
 .unit-register > .main-layout > .editorial-panel > .brand-anchor > p {
   font-family: var(--font-headline);
   font-style: italic;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   letter-spacing: 0.1em;
   color: rgba(0, 0, 0, 0.4);
 }
 
-/* --- FORM PANEL (RIGHT) --- */
 .unit-register > .main-layout > .form-panel {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 1.5rem;
   background-color: var(--bg-color);
 
   @media (min-width: 768px) {
-    padding: 6rem;
+    padding: 2rem 4rem;
   }
 }
 
 .unit-register > .main-layout > .form-panel > .form-container {
   width: 100%;
-  max-width: 28rem;
+  max-width: 26rem;
 }
 
 .unit-register > .main-layout > .form-panel > .form-container > .mobile-logo {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
 
   @media (min-width: 768px) {
     display: none;
@@ -305,44 +306,43 @@ export default defineComponent({
 .unit-register > .main-layout > .form-panel > .form-container > .mobile-logo > h2 {
   font-family: var(--font-headline);
   font-weight: 900;
-  font-size: 1.875rem;
+  font-size: 1.5rem;
   letter-spacing: -0.05em;
 }
 
 .unit-register > .main-layout > .form-panel > .form-container > .form-header {
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .unit-register > .main-layout > .form-panel > .form-container > .form-header > h2 {
   font-family: var(--font-headline);
-  font-size: 1.875rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .unit-register > .main-layout > .form-panel > .form-container > .form-header > p {
   color: var(--on-surface-variant);
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   font-weight: 300;
 }
 
 .unit-register > .main-layout > .form-panel > .form-container > .register-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 0.85rem;
 }
 
-/* Form Inputs */
 .unit-register > .main-layout > .form-panel > .form-container > .register-form > .input-group {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.35rem;
 }
 
 .unit-register > .main-layout > .form-panel > .form-container > .register-form > .password-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 0.85rem;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
@@ -350,7 +350,7 @@ export default defineComponent({
 }
 
 .unit-register > .main-layout > .form-panel > .form-container > .register-form .input-group > label {
-  font-size: 10px;
+  font-size: 9px;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   color: var(--on-surface-variant);
@@ -362,8 +362,8 @@ export default defineComponent({
   background-color: var(--surface-lowest);
   border: 1px solid var(--ghost-border);
   border-radius: 0.125rem;
-  padding: 0.875rem 1rem;
-  font-size: 0.875rem;
+  padding: 0.65rem 1rem;
+  font-size: 0.85rem;
   outline: none;
   transition: all 0.3s ease;
   color: var(--text-color);
@@ -377,23 +377,21 @@ export default defineComponent({
   color: #d4d4d8;
 }
 
-/* Terms Checkbox */
 .unit-register > .main-layout > .form-panel > .form-container > .register-form > .terms-group {
   display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  padding-block: 0.5rem;
+  align-items: center;
+  gap: 0.5rem;
+  padding-block: 0.25rem;
 }
 
 .unit-register > .main-layout > .form-panel > .form-container > .register-form > .terms-group > .checkbox-wrapper {
   display: flex;
   align-items: center;
-  height: 1.25rem;
 }
 
 .unit-register > .main-layout > .form-panel > .form-container > .register-form > .terms-group > .checkbox-wrapper > input {
-  width: 1rem;
-  height: 1rem;
+  width: 0.875rem;
+  height: 0.875rem;
   border-radius: 0.125rem;
   border: 1px solid var(--outline-variant);
   background-color: var(--surface-lowest);
@@ -401,28 +399,26 @@ export default defineComponent({
 }
 
 .unit-register > .main-layout > .form-panel > .form-container > .register-form > .terms-group > label {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: var(--on-surface-variant);
-  line-height: 1.6;
 }
 
 .unit-register > .main-layout > .form-panel > .form-container > .register-form > .terms-group > label > a {
   color: var(--primary-color);
   font-weight: 500;
   text-decoration: underline;
-  text-underline-offset: 4px;
+  text-underline-offset: 3px;
   text-decoration-color: #e4e4e7;
 }
 
-/* Submit Button */
 .unit-register > .main-layout > .form-panel > .form-container > .register-form > .submit-btn {
   width: 100%;
   background: var(--satin-finish);
   color: #ffffff;
-  font-size: 11px;
+  font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.25em;
-  padding: 1rem;
+  padding: 0.85rem;
   border-radius: 0.125rem;
   border: none;
   cursor: pointer;
@@ -431,6 +427,7 @@ export default defineComponent({
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  margin-top: 0.25rem;
 }
 
 .unit-register > .main-layout > .form-panel > .form-container > .register-form > .submit-btn:hover {
@@ -446,9 +443,8 @@ export default defineComponent({
   transform: translateX(4px);
 }
 
-/* Form Footer */
 .unit-register > .main-layout > .form-panel > .form-container > .form-footer {
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   text-align: center;
 }
 
@@ -466,16 +462,15 @@ export default defineComponent({
   transition: color 0.3s ease;
 }
 
-/* --- BOTTOM FOOTER --- */
 .unit-register > .bottom-footer {
   width: 100%;
   background-color: var(--surface-low);
-  padding: 3rem 2rem;
+  padding: 1.25rem 2rem;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   flex-shrink: 0;
   transition: all 0.3s ease-in-out;
 
@@ -483,12 +478,22 @@ export default defineComponent({
     flex-direction: row;
     justify-content: space-between;
   }
+
+  @media (max-height: 750px) {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+    overflow: hidden;
+  }
 }
 
 .unit-register > .bottom-footer > .footer-brand {
   font-family: var(--font-headline);
   font-style: italic;
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: var(--primary-color);
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -502,7 +507,7 @@ export default defineComponent({
 }
 
 .unit-register > .bottom-footer > .footer-links > a {
-  font-size: 10px;
+  font-size: 9px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #a1a1aa;
@@ -516,13 +521,12 @@ export default defineComponent({
 }
 
 .unit-register > .bottom-footer > .footer-copyright {
-  font-size: 10px;
+  font-size: 9px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #a1a1aa;
 }
 
-/* Material Symbols Setup */
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
 }
