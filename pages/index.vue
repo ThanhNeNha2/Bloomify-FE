@@ -30,7 +30,7 @@ export default defineComponent({
     </p>
 
     <p class="name">
-      Vo Chi Thanh check
+      Vo Chi Thanh check 2
     </p>
   </div>
 </template>
