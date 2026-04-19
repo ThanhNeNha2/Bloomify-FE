@@ -4,7 +4,7 @@ import {
   ref
 } from 'vue';
 import HomePageContext from './HomePageContext';
- 
+
 export default defineComponent({
   name: 'HomeView',
 
@@ -38,7 +38,7 @@ export default defineComponent({
 <style scoped>
 .unit-home {
   background-color: var(--background-color);
-  
+
   padding-block: 1rem;
   padding-inline: 1rem;
 }
