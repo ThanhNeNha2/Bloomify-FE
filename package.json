@@ -3,6 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
@@ -10,8 +12,16 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@iconify/vue": "^5.0.0",
     "nuxt": "^3.19.2",
     "vue": "^3.5.22",
     "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@iconify-json/ph": "^1.2.2",
+    "eslint": "^9.39.4",
+    "eslint-plugin-jsdoc": "^61.7.1",
+    "eslint-plugin-vue": "^10.8.0",
+    "semantic-release": "^24.2.9"
   }
 }
